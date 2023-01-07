@@ -7,7 +7,7 @@
     tools:context=".CreateCardActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/fondo_negro_pelota" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtPas"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginStart="14dp"
@@ -28,23 +28,23 @@
         android:text="PAS"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonN3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/btnDecPas"
+        app:layout_constraintTop_toBottomOf="@+id/txtSho" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Create Your Card"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6" />
+        app:layout_constraintBottom_toTopOf="@+id/imgCard"
+        app:layout_constraintEnd_toEndOf="@+id/imgCard"
+        app:layout_constraintStart_toStartOf="@+id/imgCard" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgCard"
         android:layout_width="211dp"
         android:layout_height="344dp"
         android:scaleType="centerCrop"
@@ -56,7 +56,7 @@
         app:srcCompat="@drawable/oro" />
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/btnIncDri"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
@@ -64,22 +64,22 @@
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDecDri"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/btnDecDef"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintEnd_toStartOf="@+id/txtDef"
+        app:layout_constraintTop_toBottomOf="@+id/btnDecDri" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnDecDri"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
@@ -87,11 +87,11 @@
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toStartOf="@+id/txtDri"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtDri"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginTop="28dp"
@@ -99,66 +99,66 @@
         android:text="DRI"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeCardRigth"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txtDef"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginTop="15dp"
         android:text="DEF"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@+id/txtDri"
+        app:layout_constraintTop_toBottomOf="@+id/txtDri" />
 
     <Button
-        android:id="@+id/button25"
+        android:id="@+id/btnIncPhy"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/button26"
-        app:layout_constraintTop_toBottomOf="@+id/button22" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDecPhy"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncDef" />
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/btnDecPhy"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/button23" />
+        app:layout_constraintEnd_toStartOf="@+id/txtPhy"
+        app:layout_constraintTop_toBottomOf="@+id/btnDecDef" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtPhy"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
         android:text="PHY"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintEnd_toEndOf="@+id/txtDef"
+        app:layout_constraintTop_toBottomOf="@+id/txtDef" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/btnIncDef"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/button23"
-        app:layout_constraintTop_toBottomOf="@+id/button20" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDecDef"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncDri" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnChangeCardLeft"
         android:layout_width="54dp"
         android:layout_height="66dp"
         android:layout_marginTop="152dp"
@@ -166,11 +166,11 @@
         android:backgroundTint="#00000000"
         android:text="f"
         android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintEnd_toStartOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnChangeCardRigth"
         android:layout_width="56dp"
         android:layout_height="64dp"
         android:layout_marginStart="12dp"
@@ -178,11 +178,11 @@
         android:backgroundTint="#00FFFFFF"
         android:text="f"
         android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard" />
 
     <Button
-        android:id="@+id/incPacBtn"
+        android:id="@+id/btnIncPac"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginStart="30dp"
@@ -190,11 +190,11 @@
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintStart_toStartOf="@+id/btnChangeCardLeft"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <Button
-        android:id="@+id/decPacBtn"
+        android:id="@+id/btnDecPac"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -202,11 +202,11 @@
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/incPacBtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/btnIncPac"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtPac"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginStart="14dp"
@@ -214,22 +214,22 @@
         android:text="PAC"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/decPacBtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/btnDecPac"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <Button
-        android:id="@+id/buttonM2"
+        android:id="@+id/btnIncSho"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/incPacBtn"
-        app:layout_constraintTop_toBottomOf="@+id/incPacBtn" />
+        app:layout_constraintStart_toStartOf="@+id/btnIncPac"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncPac" />
 
     <Button
-        android:id="@+id/buttonN2"
+        android:id="@+id/btnDecSho"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -237,11 +237,11 @@
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/buttonM2"
-        app:layout_constraintTop_toBottomOf="@+id/decPacBtn" />
+        app:layout_constraintStart_toEndOf="@+id/btnIncSho"
+        app:layout_constraintTop_toBottomOf="@+id/btnDecPac" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtSho"
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginStart="14dp"
@@ -249,32 +249,32 @@
         android:text="SHO"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonN2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/btnDecSho"
+        app:layout_constraintTop_toBottomOf="@+id/txtPac" />
 
     <Button
-        android:id="@+id/buttonM3"
+        android:id="@+id/btnIncPas"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:backgroundTint="#FFFFFF"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/buttonM2"
-        app:layout_constraintTop_toBottomOf="@+id/buttonM2" />
+        app:layout_constraintStart_toStartOf="@+id/btnIncSho"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncSho" />
 
     <Button
-        android:id="@+id/buttonN3"
+        android:id="@+id/btnDecPas"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:backgroundTint="#FFFFFF"
         android:text="-"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/buttonM3"
-        app:layout_constraintTop_toBottomOf="@+id/buttonN2" />
+        app:layout_constraintStart_toEndOf="@+id/btnIncPas"
+        app:layout_constraintTop_toBottomOf="@+id/btnDecSho" />
 
     <Button
-        android:id="@+id/buttonCreate"
+        android:id="@+id/btnCreate"
         android:layout_width="117dp"
         android:layout_height="57dp"
         android:layout_marginTop="188dp"
@@ -282,7 +282,7 @@
         android:text="CREATE"
         android:textSize="20sp"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toEndOf="@+id/imgCard"
+        app:layout_constraintStart_toStartOf="@+id/imgCard"
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 </androidx.constraintlayout.widget.ConstraintLayout>
