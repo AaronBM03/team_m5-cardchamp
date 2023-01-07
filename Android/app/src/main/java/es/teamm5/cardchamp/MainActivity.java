@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //crearBD();
-        System.out.println("Empieza");
+        System.out.println("Empieza ****************");
 //        System.out.println(recuperarClub(1));
-        testChampionship();
-        System.out.println("Acaba");
+        testQueries();
+        System.out.println("Acaba ****************");
     }
 
     public static int DB_VERSION = 1;
@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(championship);
     }
 
+    public void testQueries()
+    {
+        System.out.println(Queries.generateRandomPlayer(this));
+    }
+
     public void crearBD()
     {
         ConexionSQLite db2 = new ConexionSQLite(this, DB_NAME, null, DB_VERSION);
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public Club recuperarClub(int id) {
+    /*public Club recuperarClub(int id) {
         SQLiteDatabase db = getReadableDatabase();
         System.out.println(db.getMaximumSize());
         System.out.println(db.getPageSize());
@@ -66,12 +71,12 @@ public class MainActivity extends AppCompatActivity {
         db.close();
         c.close();
         return clubs;
-    }
+    }*/
 
-    private SQLiteDatabase getReadableDatabase()
+    /*private SQLiteDatabase getReadableDatabase()
     {
         ConexionSQLite db2 = new ConexionSQLite(this, DB_NAME, null, DB_VERSION);
         db2.openDataBase();
         return db2.getReadableDatabase();
-    }
+    }*/
 }

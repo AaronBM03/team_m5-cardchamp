@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import es.teamm5.cardchamp.ConexionSQLite;
 import es.teamm5.cardchamp.MainActivity;
+import es.teamm5.cardchamp.Queries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,52 +80,8 @@ public class Championship {
 
     public void generateNewMatch(Context ctx, Card player) {
         Match match = new Match(player);
-        match.setOpponent(searchOpponentCard(ctx, player.getCardAvg()));
+        match.setOpponent(Queries.searchOpponentCard(ctx, player.getCardAvg()));
         matches.add(currentMatch, match);
-    }
-
-    public Card searchOpponentCard(Context ctx, int playerAvg) {
-        SQLiteDatabase db = getReadableDatabase(ctx);
-
-        String[] valores_recuperar = {"id", "name", "color", "rarity", "position", "cardAvg", "rating", "pace", "shooting", "passing", "dribbling", "defending", "physicality", "nation_id", "club_id"};
-        Cursor c = db.query("card", valores_recuperar, "cardAvg=" + playerAvg,
-                null, null, null, null, null);
-        if (c != null) {
-            int count = c.getCount();
-			c.moveToPosition(new Random().nextInt(count));
-        }
-
-		Card opponent = null;
-		try {
-			opponent = new Card(c.getInt(0),
-					c.getString(c.getColumnIndexOrThrow("name")),
-					Color.values()[c.getInt(c.getColumnIndexOrThrow("color"))],
-					c.getInt(c.getColumnIndexOrThrow("rarity")),
-					Position.values()[c.getInt(c.getColumnIndexOrThrow("position"))],
-					c.getInt(c.getColumnIndexOrThrow("cardAvg")),
-					c.getInt(c.getColumnIndexOrThrow("rating")),
-					c.getInt(c.getColumnIndexOrThrow("pace")),
-					c.getInt(c.getColumnIndexOrThrow("shooting")),
-					c.getInt(c.getColumnIndexOrThrow("passing")),
-					c.getInt(c.getColumnIndexOrThrow("dribbling")),
-					c.getInt(c.getColumnIndexOrThrow("defending")),
-					c.getInt(c.getColumnIndexOrThrow("physicality")),
-					c.getInt(c.getColumnIndexOrThrow("nation_id")),
-					c.getInt(c.getColumnIndexOrThrow("club_id"))
-					);
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		}
-		db.close();
-        c.close();
-        return opponent;
-    }
-
-    private SQLiteDatabase getReadableDatabase(Context ctx) {
-        // TODO Cambiar el contexto
-        ConexionSQLite db2 = new ConexionSQLite(ctx, MainActivity.DB_NAME, null, MainActivity.DB_VERSION);
-        db2.openDataBase();
-        return db2.getReadableDatabase();
     }
 
     @Override
