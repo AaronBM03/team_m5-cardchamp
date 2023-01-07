@@ -44,6 +44,16 @@ public class Match {
 		status = MatchStatus.NOT_FINISHED;
 	}
 
+	public Match(Card player, Card opponent) {
+		this.player = player;
+		this.opponent = opponent;
+		turn = 0;
+		scorePlayer = 0;
+		scoreOpponent = 0;
+		usedStats = new ArrayList<>();
+		status = MatchStatus.NOT_FINISHED;
+	}
+
 	public Match() {
 	}
 

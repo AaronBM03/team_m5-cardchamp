@@ -2,7 +2,10 @@ package es.teamm5.cardchamp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.IOException;
 
@@ -13,16 +16,26 @@ import es.teamm5.cardchamp.model.Position;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btnNewGame;
+    Button btnContGame;
+    Button btnQuickMatch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initializator();
+        listeners();
+
         //crearBD();
         System.out.println("Empieza ****************");
 //        System.out.println(recuperarClub(1));
         testQueries();
         System.out.println("Acaba ****************");
     }
+
+
 
     public static int DB_VERSION = 1;
     public static String DB_NAME = "cardchamp.db";
@@ -51,6 +64,31 @@ public class MainActivity extends AppCompatActivity {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    private void initializator()
+    {
+        btnNewGame = findViewById(R.id.btnNewGame);
+        btnContGame = findViewById(R.id.btnContGame);
+        btnQuickMatch = findViewById(R.id.btnQuickMatch);
+    }
+
+    private void listeners()
+    {
+        btnNewGame.setOnClickListener(view -> {
+            // TODO CreateCardActivity
+        });
+
+        btnContGame.setOnClickListener(view -> {
+            // TODO ContinueGameActivity
+        });
+
+        btnQuickMatch.setOnClickListener(view -> {
+            // TODO MatchActivity
+            Intent i = new Intent(MainActivity.this, MatchActivity.class);
+            i.putExtra("quickMatch", true);
+            startActivity(i);
+        });
     }
 
     /*public Club recuperarClub(int id) {
