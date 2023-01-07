@@ -4,8 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.pruebagit.ConexionSQLite;
-import com.example.pruebagit.MainActivity;
+import es.teamm5.cardchamp.ConexionSQLite;
+import es.teamm5.cardchamp.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
