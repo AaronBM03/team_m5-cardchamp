@@ -1,16 +1,11 @@
 package es.teamm5.cardchamp.model;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
-import es.teamm5.cardchamp.ConexionSQLite;
-import es.teamm5.cardchamp.MainActivity;
 import es.teamm5.cardchamp.Queries;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Championship {
     private static final int TOTAL_MATCHES = 10;

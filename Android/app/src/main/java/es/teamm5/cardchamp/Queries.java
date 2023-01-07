@@ -41,7 +41,7 @@ public class Queries
                     c.getInt(c.getColumnIndexOrThrow("club_id"))
             );
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+            System.err.println("The selected Query has failed, please, review it.");
         }
         db.close();
         c.close();
@@ -75,7 +75,7 @@ public class Queries
                     c.getInt(c.getColumnIndexOrThrow("club_id"))
             );
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+            System.err.println("The selected Query has failed, please, review it.");
         }
         c.close();
         db.close();
@@ -84,7 +84,7 @@ public class Queries
 
     private static SQLiteDatabase getReadableDatabase(Context ctx) {
         // TODO Cambiar el contexto
-        ConexionSQLite db2 = new ConexionSQLite(ctx, MainActivity.DB_NAME, null, MainActivity.DB_VERSION);
+        SQLiteConnection db2 = new SQLiteConnection(ctx, MainActivity.DB_NAME, null, MainActivity.DB_VERSION);
         db2.openDataBase();
         return db2.getReadableDatabase();
     }

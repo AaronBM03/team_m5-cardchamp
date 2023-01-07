@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class ConexionSQLite extends SQLiteOpenHelper
+public class SQLiteConnection extends SQLiteOpenHelper
 {
     private static String DB_PATH = "/data/data/es.teamm5.cardchamp/databases/";
     private static String DB_NAME = "cardchamp.db";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
-    public ConexionSQLite(@Nullable Context context, @Nullable String name,
-                          @Nullable SQLiteDatabase.CursorFactory factory, int version)
+    public SQLiteConnection(@Nullable Context context, @Nullable String name,
+                            @Nullable SQLiteDatabase.CursorFactory factory, int version)
     {
         super(context, name, factory, version);
         this.myContext = context;

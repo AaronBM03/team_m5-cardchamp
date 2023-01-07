@@ -2,15 +2,12 @@ package es.teamm5.cardchamp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import java.io.IOException;
 
 import es.teamm5.cardchamp.model.Card;
 import es.teamm5.cardchamp.model.Championship;
-import es.teamm5.cardchamp.model.Club;
 import es.teamm5.cardchamp.model.Color;
 import es.teamm5.cardchamp.model.Position;
 
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void crearBD()
     {
-        ConexionSQLite db2 = new ConexionSQLite(this, DB_NAME, null, DB_VERSION);
+        SQLiteConnection db2 = new SQLiteConnection(this, DB_NAME, null, DB_VERSION);
         try {
             db2.createDataBase();
             db2.openDataBase();
