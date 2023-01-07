@@ -15,7 +15,7 @@ import java.io.OutputStream;
 
 public class ConexionSQLite extends SQLiteOpenHelper
 {
-    private static String DB_PATH = "/data/data/com.example.pruebagit/databases/";
+    private static String DB_PATH = "/data/data/es.teamm5.cardchamp/databases/";
     private static String DB_NAME = "cardchamp.db";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
