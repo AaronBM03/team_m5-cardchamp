@@ -12,11 +12,42 @@ import es.teamm5.cardchamp.model.Position;
 
 public class Queries
 {
+    // *********************** QUERIES FROM TABLE <nation> ********************************************************************
+    private static final String SELECT_NATION_NAME_BY_ID = " SELECT name FROM nation WHERE id = ?"; // Concat the id
+    private static final String SELECT_NATION_ID_BY_NAME = " SELECT id FROM nation WHERE name = ?"; // Concat the name
+
+    // *********************** QUERIES FROM TABLE <club> **********************************************************************
+    private static final String SELECT_CLUB_NAME_BY_ID = " SELECT name FROM club WHERE id = ?"; // Concat the id
+    private static final String SELECT_CLUB_ID_BY_NAME = " SELECT id FROM club WHERE name = ?"; // Concat the name
+
+    // *********************** QUERIES FROM TABLE <match> *********************************************************************
+
+
+    // *********************** QUERIES FROM TABLE <championship> **************************************************************
+
+
+    // *********************** QUERIES FROM TABLE <card> **********************************************************************
+    private static final String SELECT_NAME_BY_ID = " SELECT name FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_RARITY_BY_ID = " SELECT rarity FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_CARD_AVG_BY_ID = " SELECT cardAvg FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_RATING_BY_ID = " SELECT rating FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_PACE_BY_ID = " SELECT pace FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_SHOOTING_BY_ID = " SELECT shooting FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_PASSING_BY_ID = " SELECT passing FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_DRIBBLING_BY_ID = " SELECT dribbling FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_DEFENDING_BY_ID = " SELECT defending FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_PHYSICALITY_BY_ID = " SELECT physicality FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_COLOR_BY_ID = " SELECT color FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_POSITION_BY_ID = " SELECT position FROM card WHERE id = ?"; // Concat the id
+    private static final String SELECT_ID_BY_NAME = " SELECT id FROM card WHERE name = ?"; // Concat the name
+    private static final String SELECT_ALL_BY_CARD_AVG = " SELECT * FROM card WHERE cardAvg = ?"; // Concat the cardAvg
+    private static final String SELECT_ALL_RANDOM = "SELECT * FROM Card ORDER BY RANDOM() LIMIT 1";
+
     public static Card searchOpponentCard(Context ctx, int playerAvg) {
         SQLiteDatabase db = getReadableDatabase(ctx);
 
         String[] args = {String.valueOf(playerAvg)};
-        Cursor c = db.rawQuery("SELECT * FROM Card WHERE cardAvg=?", args);
+        Cursor c = db.rawQuery(SELECT_ALL_BY_CARD_AVG, args);
         if (c != null) {
             int count = c.getCount();
             c.moveToPosition(new Random().nextInt(count));
@@ -51,7 +82,7 @@ public class Queries
     public static Card generateRandomPlayer(Context ctx)
     {
         SQLiteDatabase db = getReadableDatabase(ctx);
-        Cursor c = db.rawQuery("SELECT * FROM Card ORDER BY RANDOM() LIMIT 1", null);
+        Cursor c = db.rawQuery(SELECT_ALL_RANDOM, null);
         if (c != null) {
             c.moveToFirst();
         }
