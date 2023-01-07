@@ -77,10 +77,14 @@ public class MainActivity extends AppCompatActivity {
     {
         btnNewGame.setOnClickListener(view -> {
             // TODO CreateCardActivity
+            Intent i = new Intent(MainActivity.this, CreateCardActivity.class);
+            startActivity(i);
         });
 
         btnContGame.setOnClickListener(view -> {
             // TODO ContinueGameActivity
+            Intent i = new Intent(MainActivity.this, ContinueGameActivity.class);
+            startActivity(i);
         });
 
         btnQuickMatch.setOnClickListener(view -> {
