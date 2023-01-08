@@ -232,8 +232,8 @@
 
     <TextView
         android:id="@+id/txtSho"
-        android:layout_width="51dp"
-        android:layout_height="25dp"
+        android:layout_width="50dp"
+        android:layout_height="27dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="18dp"
         android:text="SHO"
@@ -300,16 +300,16 @@
         app:srcCompat="@drawable/flecha" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="123dp"
-        android:layout_height="42dp"
+        android:id="@+id/txtName"
+        android:layout_width="158dp"
+        android:layout_height="43dp"
         android:layout_marginTop="176dp"
         android:ems="10"
         android:hint="NOMBRE"
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imgCard"
-        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintHorizontal_bias="0.679"
         app:layout_constraintStart_toStartOf="@+id/imgCard"
         app:layout_constraintTop_toTopOf="@+id/imgCard" />
 
@@ -325,7 +325,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgCard" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imgChangePositionRight"
         android:layout_width="15dp"
         android:layout_height="13dp"
         android:layout_marginStart="1dp"
@@ -335,7 +335,7 @@
         app:srcCompat="@drawable/mayor_que" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imgChangePositionLeft"
         android:layout_width="15dp"
         android:layout_height="13dp"
         android:layout_marginTop="4dp"
@@ -344,5 +344,64 @@
         app:layout_constraintEnd_toStartOf="@+id/txtPos"
         app:layout_constraintTop_toTopOf="@+id/txtPos"
         app:srcCompat="@drawable/mayor_que" />
+
+    <TextView
+        android:id="@+id/txtCardPac"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="-15dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtName"
+        app:layout_constraintTop_toTopOf="@+id/txtName" />
+
+    <TextView
+        android:id="@+id/txtCardSho"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCardPac"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardPac" />
+
+    <TextView
+        android:id="@+id/txtCardPas"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCardSho"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardSho" />
+
+    <TextView
+        android:id="@+id/txtCardDri"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="-75dp"
+        android:layout_marginTop="40dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtName"
+        app:layout_constraintTop_toTopOf="@+id/txtName" />
+
+    <TextView
+        android:id="@+id/txtCardDef"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtCardDri"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardDri" />
+
+    <TextView
+        android:id="@+id/txtCardPhy"
+        android:layout_width="21dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="1dp"
+        android:text="90"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtCardDef"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardDef" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
