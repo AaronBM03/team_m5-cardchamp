@@ -23,8 +23,8 @@
         android:id="@+id/txtPas"
         android:layout_width="51dp"
         android:layout_height="25dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
         android:text="PAS"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -35,7 +35,7 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="44dp"
         android:text="Create Your Card"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -52,33 +52,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362"
+        app:layout_constraintVertical_bias="0.276"
         app:srcCompat="@drawable/oro" />
+
+    <Button
+        android:id="@+id/btnIncDef"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="myOnClick"
+        android:text="+"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/btnDecDef"
+        app:layout_constraintTop_toBottomOf="@+id/btnIncDri" />
 
     <Button
         android:id="@+id/btnIncDri"
         android:layout_width="43dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="myOnClick"
         android:text="+"
         android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/btnDecDri"
         app:layout_constraintTop_toBottomOf="@+id/imgCard" />
-
-    <Button
-        android:id="@+id/btnDecDef"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="myOnClick"
-        android:text="-"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/txtDef"
-        app:layout_constraintTop_toBottomOf="@+id/btnDecDri" />
 
     <Button
         android:id="@+id/btnDecDri"
@@ -98,18 +99,31 @@
         android:layout_width="51dp"
         android:layout_height="25dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="28dp"
         android:text="DRI"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnChangeCardRigth"
+        app:layout_constraintEnd_toEndOf="@+id/imgChangeCardRight"
         app:layout_constraintTop_toBottomOf="@+id/imgCard" />
+
+    <Button
+        android:id="@+id/btnDecDef"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="myOnClick"
+        android:text="-"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/txtDef"
+        app:layout_constraintTop_toBottomOf="@+id/btnDecDri" />
 
     <TextView
         android:id="@+id/txtDef"
         android:layout_width="51dp"
         android:layout_height="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="18dp"
         android:text="DEF"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -120,7 +134,8 @@
         android:id="@+id/btnIncPhy"
         android:layout_width="43dp"
         android:layout_height="42dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="myOnClick"
         android:text="+"
@@ -132,6 +147,7 @@
         android:id="@+id/btnDecPhy"
         android:layout_width="43dp"
         android:layout_height="42dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="myOnClick"
@@ -144,7 +160,7 @@
         android:id="@+id/txtPhy"
         android:layout_width="51dp"
         android:layout_height="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:text="PHY"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -152,52 +168,16 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDef" />
 
     <Button
-        android:id="@+id/btnIncDef"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="myOnClick"
-        android:text="+"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/btnDecDef"
-        app:layout_constraintTop_toBottomOf="@+id/btnIncDri" />
-
-    <Button
-        android:id="@+id/btnChangeCardLeft"
-        android:layout_width="54dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="#00000000"
-        android:text="f"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/imgCard"
-        app:layout_constraintTop_toTopOf="@+id/imgCard" />
-
-    <Button
-        android:id="@+id/btnChangeCardRigth"
-        android:layout_width="56dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="152dp"
-        android:backgroundTint="#00FFFFFF"
-        android:text="f"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/imgCard"
-        app:layout_constraintTop_toTopOf="@+id/imgCard" />
-
-    <Button
         android:id="@+id/btnIncPac"
         android:layout_width="43dp"
         android:layout_height="42dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="myOnClick"
         android:text="+"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/btnChangeCardLeft"
+        app:layout_constraintStart_toStartOf="@+id/imgChangeCardLeft"
         app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <Button
@@ -217,8 +197,8 @@
         android:id="@+id/txtPac"
         android:layout_width="51dp"
         android:layout_height="25dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:text="PAC"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -254,8 +234,8 @@
         android:id="@+id/txtSho"
         android:layout_width="51dp"
         android:layout_height="25dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
         android:text="SHO"
         android:textColor="#5DC1B9"
         android:textSize="24sp"
@@ -297,4 +277,72 @@
         app:layout_constraintEnd_toEndOf="@+id/imgCard"
         app:layout_constraintStart_toStartOf="@+id/imgCard"
         app:layout_constraintTop_toBottomOf="@+id/imgCard" />
+
+    <ImageView
+        android:id="@+id/imgChangeCardLeft"
+        android:layout_width="69dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imgChangeCardRight"
+        android:layout_width="69dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:rotation="180"
+        app:layout_constraintStart_toEndOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard"
+        app:srcCompat="@drawable/flecha" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="123dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:hint="NOMBRE"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgCard"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard" />
+
+    <TextView
+        android:id="@+id/txtPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:text="POS"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="15dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/txtPos"
+        app:layout_constraintTop_toTopOf="@+id/txtPos"
+        app:srcCompat="@drawable/mayor_que" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="15dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:rotation="180"
+        app:layout_constraintEnd_toStartOf="@+id/txtPos"
+        app:layout_constraintTop_toTopOf="@+id/txtPos"
+        app:srcCompat="@drawable/mayor_que" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
