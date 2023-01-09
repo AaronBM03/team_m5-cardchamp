@@ -404,4 +404,56 @@
         app:layout_constraintStart_toStartOf="@+id/txtCardDef"
         app:layout_constraintTop_toBottomOf="@+id/txtCardDef" />
 
+    <TextView
+        android:id="@+id/txtMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPos"
+        app:layout_constraintEnd_toEndOf="@+id/txtPos"
+        app:layout_constraintStart_toStartOf="@+id/txtPos" />
+
+    <ImageView
+        android:id="@+id/imgClub"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtName"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtName"
+        app:srcCompat="@drawable/icono_equipo" />
+
+    <ImageView
+        android:id="@+id/imgNationality"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgClub"
+        app:layout_constraintEnd_toEndOf="@+id/imgClub"
+        app:layout_constraintStart_toStartOf="@+id/imgClub"
+        app:srcCompat="@drawable/bandera" />
+
+    <TextView
+        android:id="@+id/txtPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-40dp"
+        android:text="400"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/imgCard"
+        app:layout_constraintTop_toTopOf="@+id/imgCard" />
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtName"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtName"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
