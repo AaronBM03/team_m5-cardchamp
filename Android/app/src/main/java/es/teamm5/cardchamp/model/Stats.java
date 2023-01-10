@@ -6,5 +6,5 @@ public enum Stats {
 	PAS,
 	DRI,
 	DEF,
-	PHI
+	PHY
 }

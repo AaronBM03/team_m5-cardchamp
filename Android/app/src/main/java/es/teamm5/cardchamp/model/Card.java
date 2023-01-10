@@ -169,12 +169,42 @@ public class Card {
 				return pace;
 			case PAS:
 				return passing;
-			case PHI:
+			case PHY:
 				return physicality;
 			case SHO:
 				return shooting;
 			default:
 				return -1;
+		}
+	}
+
+
+	public void setStat(Stats stat, int i)
+	{
+		switch (stat) {
+			case DEF:
+				setDefending(i);
+				break;
+
+			case DRI:
+				setDribbling(i);
+				break;
+
+			case PAC:
+				setPace(i);
+				break;
+
+			case PAS:
+				setPassing(i);
+				break;
+
+			case PHY:
+				setPhysicality(i);
+				break;
+
+			case SHO:
+				setShooting(i);
+				break;
 		}
 	}
 
@@ -258,4 +288,5 @@ public class Card {
 				", club_id=" + club_id +
 				'}';
 	}
+
 }

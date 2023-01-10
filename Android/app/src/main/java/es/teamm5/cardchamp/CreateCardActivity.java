@@ -3,7 +3,6 @@ package es.teamm5.cardchamp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +19,12 @@ public class CreateCardActivity extends AppCompatActivity
     private static final int INC_FOR_LONG_CLICK = 10;
     private static final int MAX_CARD_STAT_VALUE = 99;
     private static final int MIN_CARD_STAT_VALUE = 0;
+    private static final int POINTS_FOR_BRONZE_CARD = 270;
+    private static final int POINTS_FOR_SILVER_CARD = 390;
+    private static final int POINTS_FOR_GOLD_CARD = 450;
+    private static final int POINTS_FOR_ICON_CARD = 520;
 
-    int points = 200; // TODO deberá cambiar dependiendo la carta seleccionada
+    int points; // TODO deberá cambiar dependiendo la carta seleccionada
 
     TextView txtPoints;
     TextView txtCardPac;
@@ -89,138 +92,53 @@ public class CreateCardActivity extends AppCompatActivity
                 switch (view.getId())
                 {
                     case R.id.btnIncPac:
-                        if (canIncrement(0, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPace(player.getPace() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The pace stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PAC, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnIncSho:
-                        if (canIncrement(1, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setShooting(player.getShooting() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The shooting stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.SHO, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnIncPas:
-                        if (canIncrement(2, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPassing(player.getPassing() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The passing stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PAS, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnIncDri:
-                        if (canIncrement(3, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setDribbling(player.getDribbling() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The dribbling stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.DRI, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnIncDef:
-                        if (canIncrement(4, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setDefending(player.getDefending() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The deffending stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.DEF, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnIncPhy:
-                        if (canIncrement(5, MAX_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPhysicality(player.getPhysicality() + INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The physicality stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PHY, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecPac:
-                        if (canDecrement(0, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPace(player.getPace() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);;
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The pace stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PAC, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecSho:
-                        if (canDecrement(1, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setShooting(player.getShooting() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The shooting stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.SHO, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecPas:
-                        if (canDecrement(2, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPassing(player.getPassing() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The passing stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PAS, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecDri:
-                        if (canDecrement(3, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setDribbling(player.getDribbling() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The dribbling stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.DRI, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecDef:
-                        if (canDecrement(4, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setDefending(player.getDefending() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The deffending stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.DEF, INC_FOR_SIMPLE_CLICK);
                         break;
 
                     case R.id.btnDecPhy:
-                        if (canDecrement(5, MIN_CARD_STAT_VALUE, INC_FOR_SIMPLE_CLICK))
-                        {
-                            player.setPhysicality(player.getPhysicality() - INC_FOR_SIMPLE_CLICK);
-                            refreshPoints(INC_FOR_SIMPLE_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The physicality stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PHY, INC_FOR_SIMPLE_CLICK);
                         break;
                 }
-                refreshLabels();
             });
 
             btn.setOnLongClickListener(view ->
@@ -228,143 +146,58 @@ public class CreateCardActivity extends AppCompatActivity
                 switch (view.getId())
                 {
                     case R.id.btnIncPac:
-                        if (canIncrement(0, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPace(player.getPace() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The pace stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PAC, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnIncSho:
-                        if (canIncrement(1, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setShooting(player.getShooting() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The shooting stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.SHO, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnIncPas:
-                        if (canIncrement(2, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPassing(player.getPassing() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The passing stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PAS, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnIncDri:
-                        if (canIncrement(3, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setDribbling(player.getDribbling() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The dribbling stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.DRI, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnIncDef:
-                        if (canIncrement(4, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setDefending(player.getDefending() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The deffending stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.DEF, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnIncPhy:
-                        if (canIncrement(5, MAX_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPhysicality(player.getPhysicality() + INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, false);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The physicality stat cannot value more than 99 points", Toast.LENGTH_SHORT).show();
-                        }
+                        incrementStat(Stats.PHY, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecPac:
-                        if (canDecrement(0, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPace(player.getPace() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The pace stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PAC, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecSho:
-                        if (canDecrement(1, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setShooting(player.getShooting() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The shooting stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.SHO, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecPas:
-                        if (canDecrement(2, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPassing(player.getPassing() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The passing stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PAS, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecDri:
-                        if (canDecrement(3, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setDribbling(player.getDribbling() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The dribbling stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.DRI, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecDef:
-                        if (canDecrement(4, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setDefending(player.getDefending() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The deffending stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.DEF, INC_FOR_LONG_CLICK);
                         break;
 
                     case R.id.btnDecPhy:
-                        if (canDecrement(5, MIN_CARD_STAT_VALUE, INC_FOR_LONG_CLICK))
-                        {
-                            player.setPhysicality(player.getPhysicality() - INC_FOR_LONG_CLICK);
-                            refreshPoints(INC_FOR_LONG_CLICK, true);
-                        } else
-                        {
-                            Toast.makeText(CreateCardActivity.this, "The physicality stat cannot value less than 0 points", Toast.LENGTH_SHORT).show();
-                        }
+                        decreaseStat(Stats.PHY, INC_FOR_LONG_CLICK);
                         break;
                 }
-                refreshLabels();
                 return true;
             });
         }
-
     }
+
 
     private void initializer()
     {
@@ -408,6 +241,8 @@ public class CreateCardActivity extends AppCompatActivity
         btns.add(btnDecDri);
         btns.add(btnDecDef);
         btns.add(btnDecPhy);
+
+        points = POINTS_FOR_BRONZE_CARD;
     }
 
     private void refreshLabels()
@@ -428,69 +263,55 @@ public class CreateCardActivity extends AppCompatActivity
 
     /**
      * Function to know if the stat can be incremented
-     * @param stat 0 - PAC | 1 - SHO | 2 - PAS | 3 - DRI | 4 - DEF | 5 - PHY
-     * @param max maxValue that this stat can value
+     * @param stat 0 - PAC | 1 - SHO | 2 - PAS | 3 - DRI | 4 - DEF | 5 - PHY | 10 - GlobalPoints
      * @param amountIncremented the amount that is going to increment the stat
      * @return true if the stat can be incremented, false if not
      */
-    private boolean canIncrement(int stat, int max, int amountIncremented)
+    private boolean canIncrement(Stats stat, int amountIncremented)
     {
-        switch (stat)
-        {
-            case 0:
-                return (player.getPace() + amountIncremented) <= max;
-
-            case 1:
-                return (player.getShooting() + amountIncremented) <= max;
-
-            case 2:
-                return (player.getPassing() + amountIncremented) <= max;
-
-            case 3:
-                return (player.getDribbling() + amountIncremented) <= max;
-
-            case 4:
-                return (player.getDefending() + amountIncremented) <= max;
-
-            case 5:
-                return (player.getPhysicality() + amountIncremented) <= max;
-
-            default:
-                return false;
+        if(player.getStat(stat) + amountIncremented > CreateCardActivity.MAX_CARD_STAT_VALUE){
+            Toast.makeText(CreateCardActivity.this, "Stats cannot value more than 99 points", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (points - amountIncremented < 0) {
+            Toast.makeText(CreateCardActivity.this, "You don't have enough points", Toast.LENGTH_SHORT).show();
+            return false;
         }
+
+        return true;
     }
 
     /**
-     * Function to know if the stat can be decremented
-     * @param stat 0 - PAC | 1 - SHO | 2 - PAS | 3 - DRI | 4 - DEF | 5 - PHY
-     * @param min minValue that this stat can value
-     * @param amountDecrement the amount that is going to decrement the stat
-     * @return true if the stat can be decremented, false if not
+     * Function to know if the stat can be decreased
+     * @param stat 0 - PAC | 1 - SHO | 2 - PAS | 3 - DRI | 4 - DEF | 5 - PHY | 10 - GlobalPoints
+     * @param amountDecreas the amount that is going to decreas the stat
+     * @return true if the stat can be decreased, false if not
      */
-    private boolean canDecrement(int stat, int min, int amountDecrement)
+    private boolean canDecreas(Stats stat, int amountDecreas)
     {
-        switch (stat)
+        return player.getStat(stat) - amountDecreas >= CreateCardActivity.MIN_CARD_STAT_VALUE;
+    }
+
+    private void incrementStat(Stats stat, int amountIncremented)
+    {
+        if (canIncrement(stat, amountIncremented))
         {
-            case 0:
-                return (player.getPace() - amountDecrement) >= min;
-
-            case 1:
-                return (player.getShooting() - amountDecrement) >= min;
-
-            case 2:
-                return (player.getPassing() - amountDecrement) >= min;
-
-            case 3:
-                return (player.getDribbling() - amountDecrement) >= min;
-
-            case 4:
-                return (player.getDefending() - amountDecrement) >= min;
-
-            case 5:
-                return (player.getPhysicality() - amountDecrement) >= min;
-
-            default:
-                return false;
+            player.setStat(stat, player.getStat(stat) + amountIncremented);
+            refreshPoints(amountIncremented, false);
         }
+        refreshLabels();
+    }
+
+    private void decreaseStat(Stats stat, int amountDecreased)
+    {
+        if (canDecreas(stat, amountDecreased))
+        {
+            player.setStat(stat, player.getStat(stat) - amountDecreased);
+            refreshPoints(amountDecreased, true);
+        } else
+        {
+            Toast.makeText(CreateCardActivity.this, "Stats cannot value less than 0 points", Toast.LENGTH_SHORT).show();
+        }
+
+        refreshLabels();
     }
 }
